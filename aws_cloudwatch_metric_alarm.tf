@@ -8,7 +8,7 @@ resource "aws_cloudwatch_metric_alarm" "test-alarm" {
   comparison_operator = "GreaterThanOrEqualToThreshold"        # GreaterThanOrEqualToThreshold is >= 
   evaluation_periods  = "1"                                    # ?
   metric_name         = "${each.key}/error"                    # it's important to tie metric 
-  namespace           = "test-alarm"                           # Set namespace
+  namespace           = "alarm/error"                          # Set namespace
   period              = "120"                                  # Period must be 10, 30 or a multiple of 60sec
   statistic           = "Sum"                                  # Sum, Avarage etc...
   threshold           = "1"                                    # if over filter count 1, create alarm

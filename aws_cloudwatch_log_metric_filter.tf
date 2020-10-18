@@ -13,7 +13,7 @@ resource "aws_cloudwatch_log_metric_filter" "error_alarm" {
 
   metric_transformation {
     name      = "${each.key}/error"
-    namespace = "error_alarm"
+    namespace = "alarm/error"
     value     = 1
   }
 
